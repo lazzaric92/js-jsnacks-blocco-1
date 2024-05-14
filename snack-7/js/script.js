@@ -1,14 +1,14 @@
 //todo: Fai inserire un numero, che chiameremo N, all'utente. Genera N array, ognuno formato da 10 numeri casuali da 1 a 100. Ogni volta che ne crei uno, stampalo.
 
-const userNumber = Number.parseInt(prompt('Type a number'), 10);
-const arrayOne = [];
-let randomNumber;
+let userNumber = Number.parseInt(prompt('Type a number'), 10);
+if (userNumber > 20 || userNumber < 1 || Number.isNaN(userNumber)){
+    userNumber = 10;
+}
+
 for (let i = 0; i < userNumber; i++){
-    let arrayTwo = [];
+    const numbersArray = [];
     for( let k = 0; k < 10; k++){
-        randomNumber = Math.floor(Math.random() * 100) + 1;
-        arrayTwo.push(randomNumber);
+        numbersArray.push(Math.floor(Math.random() * 100) + 1);
     }
-    let newArray = arrayOne.concat(arrayTwo);
-    console.log(newArray);
+    console.log(numbersArray);
 }
